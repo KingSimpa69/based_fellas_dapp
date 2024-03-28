@@ -1,0 +1,29 @@
+.starsContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .star {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    animation: twinkling 3s infinite, fadeIn 1s forwards;
+  }
+  
+  @keyframes twinkling {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  

@@ -1,0 +1,30 @@
+const eyes = [
+"EYES",
+"Purple",
+"Deep Red",
+"Green",
+"Yellow",
+"Red",
+"Light Blue",
+"Hollow",
+"Monocle",
+"Black Shades",
+"Eye Patch",
+"VR Headset",
+"Gold Shades",
+"Tech Visor",
+"4 Eyes",
+"Cyclops Eye",
+"Gold Visor",
+"Glowing Red",
+"Godly",
+"Multi Color Eyes",
+"Electric",
+"Flaming",
+"Glowing Blue",
+"Goggles",
+"Cosmic Eyes",
+"Ether Eyes"
+]
+
+export default eyes

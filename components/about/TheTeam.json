@@ -1,0 +1,83 @@
+[
+    {
+       "name":"CordelleOnBase",
+       "title":"Community Head",
+       "image":"/images/team/cordelle.jpg",
+       "socials" : {
+        "twitter":"https://twitter.com/cordelleonbase"
+       }
+
+    },
+    {
+        "name":"Underdog",
+        "title":"Community Head",
+        "image":"/images/team/underdog.jpg",
+        "socials" : {
+         "twitter":"https://twitter.com/underdogadam"
+        }
+    },
+    {
+        "name":"KingSimpa69",
+        "title":"Dev",
+        "image":"/images/team/simpa.jpg",
+        "socials" : {
+         "twitter":"https://twitter.com/kingsimpa69"
+        }
+    },
+    {
+        "name":"Trippy",
+        "title":"Community Mod",
+        "image":"/images/team/trippy.jpg",
+        "socials" : {
+         "twitter":"https://twitter.com/TrippySeer"
+        }
+    },
+    {
+        "name":"Buffoon",
+        "title":"Core Mod",
+        "image":"/images/team/buffoon.jpg",
+        "socials" : {
+         "twitter":"https://twitter.com/buffooning"
+        }
+    },
+    {
+        "name":"MadBoii",
+        "title":"Core Mod",
+        "image":"/images/team/madboi.jpg",
+        "socials" : {
+         "twitter":"https://twitter.com/Madboiionbase"
+        }
+    },
+    {
+        "name":"ButterflyChick🦋",
+        "title":"Core Mod",
+        "image":"/images/team/butterfly.jpg",
+        "socials" : {
+         "twitter":"https://twitter.com/BCryptocoin"
+        }
+    },
+    {
+        "name":"OrcaTodd",
+        "title":"Core Mod",
+        "image":"/images/team/todd.jpg",
+        "socials" : {
+         "twitter":"https://twitter.com/OrcaTodd0x"
+        }
+    },
+    {
+        "name":"Bona",
+        "title":"Core Mod",
+        "image":"/images/team/bona.jpg",
+        "socials" : {
+         "twitter":"https://twitter.com/kingsimpa69"
+        }
+    },
+    {
+        "name":"Ceej",
+        "title":"Core Mod",
+        "image":"/images/team/ceej.jpg",
+        "socials" : {
+         "twitter":"https://twitter.com/ceejifi"
+        }
+    }
+]

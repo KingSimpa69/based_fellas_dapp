@@ -1,0 +1,58 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: inter;
+    font-size: 12px;
+    height:40px;
+    margin:0;
+}
+
+.container > div{
+    display:flex;
+    width:100%;
+    height:100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height:40px;
+}
+
+.container > div > div{
+    margin-left:25px;
+    margin-right:25px;
+    display:flex;
+    width: 180px;
+}
+
+.container > div > div > svg {
+    color:#ffffff;
+    width:25px;
+    height:25px;
+    margin-top:0;
+    margin-bottom:0;
+    margin-left:2.5px;
+    margin-right:2.5px;
+}
+
+.container > div > div > img {
+    border: 0px solid #ffffff;
+    border-radius: 50%;
+    color:#ffffff;
+    width:25px;
+    height:25px;
+    margin-top:0;
+    margin-bottom:0;
+    margin-left:2.5px;
+    margin-right:2.5px;
+}
+
+.container > div > div > img:hover{
+    opacity:0.85;
+    cursor: pointer;
+}
+
+.container > div > div > svg:hover{
+    opacity:0.85;
+    cursor: pointer;
+}
