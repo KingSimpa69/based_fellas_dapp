@@ -17,7 +17,7 @@ const Homes = ({routeChange,router,windowSize}) => {
         <div className={`${styles.container} ${styles.mintCont}`}>
             <h1>MINT</h1>
             <p className={styles.mintDesc}>Mint a home! Own a residence in the Based Fellas universe!<br />
-            These homes aren't just limited to Based Fellas residents, but many other Fella friend NFTs!</p>
+            These homes aren&apos;t just limited to Based Fellas residents, but many other Fella friend NFTs!</p>
             <div className={styles.button}>MINT</div>
             <p className={styles.mintSupply}>0/5000</p>
             <div className={styles.countdown}><CountdownTimer targetDate={"2024-03-31T00:00:00.000Z"} /></div>
