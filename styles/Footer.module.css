@@ -1,4 +1,5 @@
 .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,6 +7,7 @@
     font-size: 12px;
     height:40px;
     margin:0;
+    z-index: +2;
 }
 
 .container > div{
@@ -25,7 +27,7 @@
     width: 180px;
 }
 
-.container > div > div > svg {
+.container > div > div > a > svg {
     color:#ffffff;
     width:25px;
     height:25px;
@@ -35,7 +37,7 @@
     margin-right:2.5px;
 }
 
-.container > div > div > img {
+.container > div > div > a > img {
     border: 0px solid #ffffff;
     border-radius: 50%;
     color:#ffffff;
@@ -47,12 +49,12 @@
     margin-right:2.5px;
 }
 
-.container > div > div > img:hover{
+.container > div > div > a > img:hover {
     opacity:0.85;
     cursor: pointer;
 }
 
-.container > div > div > svg:hover{
+.container > div > div > a > svg:hover{
     opacity:0.85;
     cursor: pointer;
 }

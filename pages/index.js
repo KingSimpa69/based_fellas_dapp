@@ -26,27 +26,42 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
     }
   });
   const changePlanet = async (direction) => {
+    console.log(direction)
     if (direction === "Right" && spotlight !== 0 ){
       setPlanetCss("animate__animated animate__slideOutRight animate__faster")
       await delay(200)
-      setSpotlight(spotlight - 1)
+      setSpotlight(parseInt(spotlight - 1))
+      await delay(250)
+      setPlanetCss("animate__animated animate__slideInLeft animate__faster")
+    } else if (direction === "Right" && spotlight === 0 ) {
+      setPlanetCss("animate__animated animate__slideOutRight animate__faster")
+      await delay(200)
+      setSpotlight(parseInt(options.length - 1))
+      await delay(250)
       setPlanetCss("animate__animated animate__slideInLeft animate__faster")
     }
     if (direction === "Left" && spotlight !== (MENU_ITEMS-1)){
       setPlanetCss("animate__animated animate__slideOutLeft animate__faster")
       await delay(200)
-      setSpotlight(spotlight + 1)
+      setSpotlight(parseInt(spotlight + 1))
+      await delay(250)
       setPlanetCss("animate__animated animate__slideInRight animate__faster")
-    } 
+    } else if (direction === "Left" && spotlight === (MENU_ITEMS-1)) {
+      setPlanetCss("animate__animated animate__slideOutLeft animate__faster")
+      await delay(200)
+      setSpotlight(parseInt(options.length - MENU_ITEMS))
+      await delay(250)
+      setPlanetCss("animate__animated animate__slideInRight animate__faster")
+    }
   }
 
   return (
     <div {...swipeHandler} className="wrapper">
       <div className={styles.planetSelection}>
-        <div className={planetCss}><Image onClick={()=>options[spotlight].route !== "market" ? routeChange(options[spotlight].route):null} priority alt={"planet"+spotlight} src={options[spotlight].image} width={200} height={200} /></div>
+        <div className={planetCss}><Image onClick={()=> options[spotlight].route !== "market" ? routeChange(options[spotlight].route):null} priority alt={"planet"+spotlight} src={options[spotlight].image} width={200} height={200} /></div>
         <div className={styles.arrows}>
-          <div onClick={()=>changePlanet("Right")} className={spotlight !== 0 ? styles.arrow : `${styles.arrow} invisible`}><FontAwesomeIcon icon="fa-solid fa-chevron-left" /></div>
-          <div onClick={()=>changePlanet("Left")} className={spotlight !== (MENU_ITEMS-1) ? styles.arrow : `${styles.arrow} invisible`}><FontAwesomeIcon icon="fa-solid fa-chevron-right" /></div>
+          <div onClick={()=>changePlanet("Right")} className={styles.arrow}><FontAwesomeIcon icon="fa-solid fa-chevron-left" /></div>
+          <div onClick={()=>changePlanet("Left")} className={styles.arrow}><FontAwesomeIcon icon="fa-solid fa-chevron-right" /></div>
         </div>
         <p>{options[spotlight].text}</p>
       </div>
