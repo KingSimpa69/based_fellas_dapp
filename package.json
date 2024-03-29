@@ -14,7 +14,9 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@web3modal/wagmi": "github:KingSimpa69/WagmiWeb3Modal",
     "animate.css": "^4.1.1",
+    "ethers": "^6.11.1",
     "mongodb": "^6.5.0",
     "next": "14.1.4",
     "react": "^18",
@@ -22,8 +24,7 @@
     "react-intersection-observer": "^9.8.1",
     "react-swipeable": "^7.0.1",
     "viem": "1.21.4",
-    "wagmi": "1.4.13",
-    "@web3modal/wagmi": "github:KingSimpa69/WagmiWeb3Modal"
+    "wagmi": "1.4.13"
   },
   "devDependencies": {
     "eslint": "^8",
