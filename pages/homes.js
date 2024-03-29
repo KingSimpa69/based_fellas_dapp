@@ -39,6 +39,8 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
       phase === 2 ? proofResponse[web3Shit.address] : ["0x2ffdfb4fd44aedbdb7d700b871bc934f10b406b84abcbd1dc5c2890f8a12190b"]
 
       console.log(proofs)
+      console.log(web3Shit.address)
+      console.log(proofResponse)
 
     setIsLoading(true)
     try{
@@ -93,6 +95,11 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
     getSupply()
     getPhase()
   }, [web3Shit])
+
+  useEffect(() => {
+    getSupply()
+    getPhase()
+  }, [])
   
 
   return (
