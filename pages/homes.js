@@ -38,11 +38,6 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
     const proofs = phase === 1 ? proofResponse[web3Shit.address] :
       phase === 2 ? proofResponse[web3Shit.address] : ["0x2ffdfb4fd44aedbdb7d700b871bc934f10b406b84abcbd1dc5c2890f8a12190b"]
 
-      console.log(proofs)
-      console.log(web3Shit.address)
-      console.log(proofResponse)
-      console.log(phase)
-
     setIsLoading(true)
     try{
       if (isAddress(homesContract[chain])) {
@@ -62,6 +57,7 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
     try{
       if (isAddress(homesContract[chain])) {
         const result = await readContract(provider,contractInfo,"phase",[])
+        console.log(result)
         setPhase(parseInt(result))
       } else {
         console.log("No valid contract for this network")
