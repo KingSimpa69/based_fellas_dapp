@@ -91,13 +91,7 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
   useEffect(() => {
     getSupply()
     getPhase()
-  }, [web3Shit])
-
-  useEffect(() => {
-    getSupply()
-    getPhase()
-  }, [])
-  
+  }, [web3Shit,chain])
 
   return (
     <div className="wrapper">
