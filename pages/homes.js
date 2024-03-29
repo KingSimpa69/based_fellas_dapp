@@ -3,7 +3,7 @@ import styles from "@/styles/Homes.module.css"
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
-import { isAddress } from "ethers";
+import { isAddress,parseEther } from "ethers";
 import { useEthersProvider, useEthersSigner } from "@/hooks/useEthers";
 import writeContract from "@/functions/writeContract";
 import readContract from "@/functions/readContract";
@@ -41,7 +41,7 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
     setIsLoading(true)
     try{
       if (isAddress(homesContract[chain])) {
-        const tx = await writeContract(signer,contractInfo,"mint",proofs)
+        const tx = await writeContract(signer,contractInfo,"mint",proofs,{value:parseEther("0.007")})
         const type = checkType(tx)
         type === "string" ? alert("error",tx) : alert("success","Mint successful",tx.tx.hash)
       } else {
