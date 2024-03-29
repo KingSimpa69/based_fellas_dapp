@@ -22,7 +22,7 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
 
   const homesContract = [
     "",                                           //Base
-    "0xb8a73426eF30F84a79FcBA4156e9A71B251c0362"  //Base-Sepolia
+    "0x1f1C2E2d60cD8d214fb79Db995971fC0c270352d"  //Base-Sepolia
   ]
 
   const contractInfo = {
