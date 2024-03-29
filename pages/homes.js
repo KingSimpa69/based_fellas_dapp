@@ -41,6 +41,7 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
       console.log(proofs)
       console.log(web3Shit.address)
       console.log(proofResponse)
+      console.log(phase)
 
     setIsLoading(true)
     try{
