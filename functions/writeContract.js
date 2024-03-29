@@ -23,8 +23,7 @@ const writeContract = async (signer,contractInfo,call,args,params) => {
     } catch (e) {
         const regex = /^(?:execution reverted:\s*)?(.*?)\(/;
         const error = e.message.match(regex) 
-        console.log(e)
-        return e
+        return error[1].toString()
     }
 }
 
