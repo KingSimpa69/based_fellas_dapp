@@ -35,8 +35,8 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
     const proofRequest = await fetch('https://raw.githubusercontent.com/KingSimpa69/homes_merkle_proofs/main/phase1Proofs.json');
     const proofResponse = await proofRequest.json(); 
   
-    const proofs = phase === 1 ? proofResponse[web3Shit.address] :
-      phase === 2 ? proofResponse[web3Shit.address] : ["0x2ffdfb4fd44aedbdb7d700b871bc934f10b406b84abcbd1dc5c2890f8a12190b"]
+    const proofs = phase === 1 ? proofResponse[web3Shit.address.toLowerCase()] :
+      phase === 2 ? proofResponse[web3Shit.address.toLowerCase()] : ["0x2ffdfb4fd44aedbdb7d700b871bc934f10b406b84abcbd1dc5c2890f8a12190b"]
 
     setIsLoading(true)
     try{
