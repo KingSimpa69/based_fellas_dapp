@@ -54,7 +54,6 @@
 }
 
 .alertInfo {
-
     width:70%;
     display:flex;
     flex-direction: column;
@@ -64,7 +63,7 @@
 
 .alertInfo h1{
     margin:0;
-    font-size: 16px;
+    font-size: 14px;
     text-transform: uppercase;
     font-weight: 100;
     font-family: inter;

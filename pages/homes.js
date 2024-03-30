@@ -21,8 +21,8 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
   const signer = useEthersSigner()
 
   const homesContract = [
-    "",                                           //Base
-    "0x1f1C2E2d60cD8d214fb79Db995971fC0c270352d"  //Base-Sepolia
+    "0x89b76460172f88a851Fb17617f9dc3448646931A", //Base
+    "0x9b2EcBb9fd655ac7eFB7789350B36bBF6cf048E7"  //Base-Sepolia
   ]
 
   const contractInfo = {
@@ -32,16 +32,19 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
 
   const mint = async () => {
 
-    const proofRequest = await fetch('https://raw.githubusercontent.com/KingSimpa69/homes_merkle_proofs/main/phase1Proofs.json');
-    const proofResponse = await proofRequest.json(); 
+    const proof1Request = await fetch('https://raw.githubusercontent.com/KingSimpa69/homes_merkle_proofs/main/phase1Proofs.json');
+    const PROOFS1 = await proof1Request.json(); 
+
+    const proof2Request = await fetch('https://raw.githubusercontent.com/KingSimpa69/homes_merkle_proofs/main/phase2Proofs.json');
+    const PROOFS2 = await proof2Request.json(); 
   
-    const proofs = phase === 1 ? proofResponse[web3Shit.address.toLowerCase()] :
-      phase === 2 ? proofResponse[web3Shit.address.toLowerCase()] : ["0x2ffdfb4fd44aedbdb7d700b871bc934f10b406b84abcbd1dc5c2890f8a12190b"]
+    const proofs = phase === 1 ? PROOFS1[web3Shit.address.toLowerCase()] :
+      phase === 2 ? PROOFS2[web3Shit.address.toLowerCase()] : ["0x2ffdfb4fd44aedbdb7d700b871bc934f10b406b84abcbd1dc5c2890f8a12190b"]
 
     setIsLoading(true)
     try{
       if (isAddress(homesContract[chain])) {
-        const tx = await writeContract(signer,contractInfo,"mint",proofs,{value:parseEther("0.007")})
+        const tx = await writeContract(signer,contractInfo,"mint",proofs,{value:parseEther("0.008")})
         const type = checkType(tx)
         type === "string" ? alert("error",tx) : alert("success","Mint successful",tx.tx.hash)
       } else {
@@ -107,7 +110,7 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
             These homes aren&apos;t just limited to Based Fellas residents, but many other Fella friend NFTs!</p>
             <div onClick={()=>mint()} className={!isAddress(homesContract[chain]) ? styles.disabled : styles.button}>MINT</div>
             <p  className={styles.mintSupply}>{supply}/5000</p>
-            {!isAddress(homesContract[chain]) && <div className={styles.countdown}><CountdownTimer targetDate={"2024-03-31T00:00:00.000Z"} /></div>}
+            {!isAddress(homesContract[chain]) || phase === 0 && <div className={styles.countdown}><CountdownTimer targetDate={"2024-03-31T00:00:00.000Z"} /></div>}
         </div>
       </div>
     </div>

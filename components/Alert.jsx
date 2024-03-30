@@ -60,7 +60,7 @@ const Alert = ({ alerts, setAlerts, web3Shit }) => {
             <h1>{alert.message}</h1>
             {alert.type === "success" && alert.tx !== undefined && (
               <>
-                <p>3 confirmations</p>
+                <p>2 confirmations</p>
                 <p>{shortenEthAddy(alert.tx)}</p>
               </>
             )}
