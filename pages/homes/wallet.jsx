@@ -47,8 +47,8 @@ const Wallet = ({routeChange,router,web3Shit}) => {
     
 
     useEffect(() => {
-        web3Shit.chain === 8453 ? pullOwned(0) :
-        web3Shit.chain === 84532 ? pullOwned(1) :
+        web3Shit.chain === 8453 && web3Shit.isConnected ? pullOwned(0) :
+        web3Shit.chain === 84532 && web3Shit.isConnected ? pullOwned(1) :
         null
     }, [web3Shit]) 
 

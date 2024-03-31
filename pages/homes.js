@@ -113,9 +113,9 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
             <h1>MINT</h1>
             <p className={styles.mintDesc}>Mint a home! Own a residence in the Based Fellas universe!<br />
             These homes aren&apos;t just limited to Based Fellas residents, but many other Fella friend NFTs!</p>
-            <div onClick={()=>mint()} className={!isAddress(homesContract[chain]) ? styles.disabled : styles.button}>MINT</div>
+            <div onClick={()=>web3Shit.isConnected ? mint() : alert("info", "Please connect a wallet")} className={!isAddress(homesContract[chain]) ? styles.disabled : styles.button}>MINT</div>
             <p  className={styles.mintSupply}>{supply}/5000</p>
-            {phase === 1 && <div className={styles.countdown}><CountdownTimer targetDate={"2024-04-01T00:00:00.000Z"} /></div>}
+            {phase === 1 && <div className={styles.countdown}><CountdownTimer targetDate={"2024-04-02T00:00:00.000Z"} /></div>}
             <WalletButton routeChange={routeChange} />
         </div>
       </div>
