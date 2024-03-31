@@ -43,7 +43,10 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
 
     setIsLoading(true)
     try{
-      if (isAddress(homesContract[chain])) {
+      if(web3Shit.chain !== 8453 || web3Shit.chain !== 84532){
+        alert("error","You're on the wrong chain fella!")
+        return
+      } else if (isAddress(homesContract[chain])) {
         const tx = await writeContract(signer,contractInfo,"mint",proofs,{value:parseEther("0.008")})
         const type = checkType(tx)
         type === "string" ? alert("error",tx) : alert("success","Mint successful",tx.tx.hash)
