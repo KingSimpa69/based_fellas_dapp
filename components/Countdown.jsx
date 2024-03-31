@@ -29,7 +29,7 @@ const CountdownTimer = ({ targetDate }) => {
 
   return (
     <>
-      {timeLeft.days} days {timeLeft.hours} hours {timeLeft.minutes} minutes {timeLeft.seconds} seconds remaining
+      {timeLeft.days}/d {timeLeft.hours}/h {timeLeft.minutes}/m {timeLeft.seconds}/s
     </>
   );
 };

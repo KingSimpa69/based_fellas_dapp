@@ -91,8 +91,8 @@
 }
 
 .countdown {
-    font-size: 20px;
-    margin-top: 25px;
+    font-size: 18px;
+    margin-top: 10px;
     font-family: inter;
 }
 
@@ -107,6 +107,70 @@
     background-color: #11151e;
     margin-top:2px;
     width:150px;
+}
+
+.walletButton {
+    margin:25px;
+    cursor: pointer;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.walletButton:hover svg {
+    color: #ffffff;
+}
+
+.walletButton svg{
+    z-index: +1;
+    color:#11151e;
+    width:35px;
+}
+
+.walletButton:hover {
+    border:1px solid #ffffff;
+    background-color: #11151e;
+
+}
+
+.homesInWallet {
+    display:flex;
+    flex-direction: column;
+    margin: 15px;
+    position: relative;
+    width:180px;
+    height:180px;
+}
+
+.homesInWallet h1{
+    width:50px;
+    text-align: center;
+    background-color: #11151ebe;
+    color: #ffffff;
+    z-index: +1;
+    font-family: inter;
+    border-radius: 5px;
+}
+
+.homesInWalletWrap{
+    margin-top: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.loadingMsg {
+    margin-top: 50px;
+    text-align: center;
+    font-family: inter;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    font-size: 30px;
 }
 
 @media only screen and (max-width: 1000px) {

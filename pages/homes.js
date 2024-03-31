@@ -9,6 +9,7 @@ import writeContract from "@/functions/writeContract";
 import readContract from "@/functions/readContract";
 import checkType from "@/functions/checkType";
 import { useWeb3Modal } from '@web3modal/wagmi/react'
+import WalletButton from "@/components/homes/WalletButton";
 const CountdownTimer = dynamic(() => import('../components/Countdown'), { ssr: false })
 
 const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
@@ -102,7 +103,7 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
 
   return (
     <div className="wrapper">
-      <Breadcrumbs changeRoute={routeChange} route={router} />
+      <Breadcrumbs changeRoute={routeChange} route={router}  />
       <div className={styles.wrapper}>
         <div className={windowSize.width < 1000 ? "hidden" : `${styles.container} ${styles.homeimg}`}>
           <p>HOMES</p>
@@ -114,7 +115,8 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
             These homes aren&apos;t just limited to Based Fellas residents, but many other Fella friend NFTs!</p>
             <div onClick={()=>mint()} className={!isAddress(homesContract[chain]) ? styles.disabled : styles.button}>MINT</div>
             <p  className={styles.mintSupply}>{supply}/5000</p>
-            {!isAddress(homesContract[chain]) || phase === 0 && <div className={styles.countdown}><CountdownTimer targetDate={"2024-03-31T00:00:00.000Z"} /></div>}
+            {phase === 1 && <div className={styles.countdown}><CountdownTimer targetDate={"2024-04-01T00:00:00.000Z"} /></div>}
+            <WalletButton routeChange={routeChange} />
         </div>
       </div>
     </div>

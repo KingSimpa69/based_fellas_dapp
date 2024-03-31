@@ -7,7 +7,7 @@ const readContract = async (provider,contractInfo,call,args) => {
 
         const contract = new ethers.Contract(contractInfo.addy, ABI[contractInfo.name], provider);
 
-        const tx = args.length > 0 ? await contract[call](args) : await contract[call]()
+        const tx = args.length > 0 ? await contract[call](...args) : await contract[call]()
 
         return(tx)
 
