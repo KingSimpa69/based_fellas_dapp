@@ -1,21 +1,26 @@
 import styles from '@/styles/Nav.module.css'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
-import { useEffect } from 'react'
+import { useEffect,ues } from 'react'
 import { useChainId, useAccount } from 'wagmi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useEthersProvider, useEthersSigner } from "@/hooks/useEthers";
 import { shortenEthAddy } from '@/functions/shortenEthAddy';
 
 const Web3Status = ({router,setWeb3Shit,web3Shit}) => {
 
-    const chainId = useChainId()
     const {address, isConnected} = useAccount()
     const { open } = useWeb3Modal()
+    const provider = useEthersProvider()
+    const signer = useEthersSigner()
+
+    const getChain = async () => {
+        const { chainId } = await provider.getNetwork()
+        setWeb3Shit({ chain: parseInt(chainId), address: address, isConnected: isConnected })
+    }
   
     useEffect(() => {
-        if (web3Shit.chain !== chainId || web3Shit.address !== address || web3Shit.isConnected !== isConnected) {
-            setWeb3Shit({ chain: chainId, address: address, isConnected: isConnected })
-        }
-    }, [address, isConnected, chainId, setWeb3Shit, web3Shit])
+            getChain()
+    }, [address, isConnected,provider,signer])
 
     return(
         <div>

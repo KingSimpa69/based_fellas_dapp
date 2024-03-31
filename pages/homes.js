@@ -8,9 +8,12 @@ import { useEthersProvider, useEthersSigner } from "@/hooks/useEthers";
 import writeContract from "@/functions/writeContract";
 import readContract from "@/functions/readContract";
 import checkType from "@/functions/checkType";
+import { useWeb3Modal } from '@web3modal/wagmi/react'
 const CountdownTimer = dynamic(() => import('../components/Countdown'), { ssr: false })
 
 const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
+
+  const { open } = useWeb3Modal()
 
   const [supply,setSupply] = useState(0)
   const [phase,setPhase] = useState(0)
@@ -43,15 +46,14 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
 
     setIsLoading(true)
     try{
-      if(web3Shit.chain !== 8453 || web3Shit.chain !== 84532){
-        alert("error","You're on the wrong chain fella!")
-        return
-      } else if (isAddress(homesContract[chain])) {
+      if(web3Shit.chain === 8453 || web3Shit.chain === 84532){
         const tx = await writeContract(signer,contractInfo,"mint",proofs,{value:parseEther("0.008")})
         const type = checkType(tx)
         type === "string" ? alert("error",tx) : alert("success","Mint successful",tx.tx.hash)
       } else {
-        console.log("No valid contract for this network")
+        alert("error","You're on the wrong chain fella!")
+        open({view:"Networks"})
+        return
       }
     } finally {
       setIsLoading(false)
@@ -63,7 +65,6 @@ const Homes = ({routeChange,router,windowSize,web3Shit,alert,setIsLoading}) => {
     try{
       if (isAddress(homesContract[chain])) {
         const result = await readContract(provider,contractInfo,"phase",[])
-        console.log(result)
         setPhase(parseInt(result))
       } else {
         console.log("No valid contract for this network")

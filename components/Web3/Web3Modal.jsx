@@ -4,8 +4,8 @@ import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
 
 import { WagmiConfig, configureChains } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
-import { Base, BaseSepolia } from '@/chains';
-import { createPublicClient, http } from 'viem'
+import { Base, BaseSepolia, } from '@/chains';
+import { mainnet } from '@wagmi/core/chains'
 
 const projectId = '7e1ca3c31276b2eafe50979f4372d0cc';
 
@@ -19,7 +19,7 @@ const metadata = {
 
 
 
-const { chains } = configureChains([Base, BaseSepolia], [publicProvider()]);
+const { chains } = configureChains([Base, BaseSepolia, mainnet], [publicProvider()]);
 
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
