@@ -11,11 +11,11 @@ export const Base = defineChain({
   },
   rpcUrls: {
     default: {
-      http: ['https://base-mainnet.public.blastapi.io'],
+      http: ['https://base.blockpi.network/v1/rpc/public'],
       webSocket: ['wss://base-mainnet.public.blastapi.io'],
     },
     public: {
-      http: ['https://base-mainnet.public.blastapi.io'],
+      http: ['https://base.blockpi.network/v1/rpc/public'],
       webSocket: ['wss://base-mainnet.public.blastapi.io'],
     },
   },

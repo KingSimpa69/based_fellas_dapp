@@ -1,0 +1,44 @@
+.button{
+    cursor:pointer;
+    background-color: #11151e;
+    margin-top:15px;
+    font-family: inter;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    width:150px;
+    height:50px;
+}
+
+.button:hover {
+    background: var(--textDefault);
+    color:#000000;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1 {
+    text-align: center;
+    font-family: inter;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: lighter;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.infobox{
+    margin-bottom: 30px;
+    font-family: inter;
+    max-width: 94vw;
+    width:600px;
+}
