@@ -19,6 +19,7 @@ const Fellaphase1 = ({routeChange,router,web3Shit,alert,setIsLoading}) => {
       }
 
     const setMerkle = async () => {
+        setIsLoading(true)
         const proofsRequest = await fetch('https://raw.githubusercontent.com/KingSimpa69/fella_merkle_proofs/main/phase1Proofs.json');
         const proofs = await proofsRequest.json(); 
         console.log(proofs[web3Shit.address.toLowerCase()])
