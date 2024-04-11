@@ -6,7 +6,7 @@ import { useWeb3Modal } from '@web3modal/wagmi/react'
 import checkType from "@/functions/checkType";
 import styles from "@/styles/FellaPhase1.module.css"
 
-const fellaphase1 = ({routeChange,router,web3Shit,alert,setIsLoading}) => {
+const Fellaphase1 = ({routeChange,router,web3Shit,alert,setIsLoading}) => {
 
     const provider = useEthersProvider()
     const signer = useEthersSigner()
@@ -56,4 +56,4 @@ const fellaphase1 = ({routeChange,router,web3Shit,alert,setIsLoading}) => {
     )
 }
 
-export default fellaphase1
+export default Fellaphase1
