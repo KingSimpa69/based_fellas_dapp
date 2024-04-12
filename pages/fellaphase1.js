@@ -23,7 +23,8 @@ const Fellaphase1 = ({routeChange,router,web3Shit,alert,setIsLoading}) => {
         const proofsRequest = await fetch('https://raw.githubusercontent.com/KingSimpa69/fella_merkle_proofs/main/phase1Proofs.json');
         const proofs = await proofsRequest.json(); 
         console.log(proofs[web3Shit.address.toLowerCase()])
-        try{
+        if (proofs[web3Shit.address.toLowerCase()] !== undefined) {
+          try{
             if(web3Shit.chain === 8453){
               const tx = await writeContract(signer,contractInfo,"setMerkleProof",proofs[web3Shit.address.toLowerCase()],{})
               const type = checkType(tx)
@@ -36,6 +37,11 @@ const Fellaphase1 = ({routeChange,router,web3Shit,alert,setIsLoading}) => {
           } finally {
             setIsLoading(false)
           }
+        } else {
+          setIsLoading(false)
+          alert("error","Fellas eat first!")
+        }
+
     }
 
     return(
@@ -43,12 +49,10 @@ const Fellaphase1 = ({routeChange,router,web3Shit,alert,setIsLoading}) => {
             <Breadcrumbs changeRoute={routeChange} route={router}  />
             {web3Shit.isConnected?
             <div className={styles.container}>
-                <h1 className={styles.h1}>Phase 1 Wallet Validation</h1>
-                <p className={styles.infobox}>In a scenario where we own the backend, we can supply the frontend with the merkle proofs.<br/>Unfortuntley, we do not own SushiSwap. In order to have your merkle proofs made
-                    available outside of our dapp, each wallet can retreive them via this page and submit them to the FELLA smart contract with the click of a button!<br/>This way your wallet will be validated in the merkletree directly onchain 
-                    at token swap.
+                <h1 className={styles.h1}>Phase 1</h1>
+                <p className={styles.infobox}> Validate your wallet and activate phase 1.
                 </p>
-              <div className={styles.button} onClick={()=>setMerkle()}>Write Proofs</div>  
+              <div className={styles.button} onClick={()=>setMerkle()}>Activate</div>  
             </div>:
             <div className={styles.h1} style={{marginTop:"50px",fontSize:"20px"}}>
                 Please connect a wallet

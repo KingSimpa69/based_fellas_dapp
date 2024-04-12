@@ -21,10 +21,12 @@ const writeContract = async (signer,contractInfo,call,args,params) => {
         return({txLog,tx})
 
     } catch (e) {
+        console.log(e)
         const regex = /^(?:execution reverted:\s*)?(.*?)\(/;
         const error = e.message.match(regex) 
         const errorFormatted = error[1].toString().replace(/"/g, '')
         const final = errorFormatted.includes("missing revert data") ? "Not enough ETH in your wallet" : errorFormatted
+
         return final;
     }
 }
