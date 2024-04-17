@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 const { library, config } = require('@fortawesome/fontawesome-svg-core');
 import { faTwitter, faGithub, faDiscord, faLinkedin, faXTwitter, faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { faCopy, faPaperPlane, faImage, faIdCard, faPaste } from '@fortawesome/free-regular-svg-icons';
-import { faChevronDown, faQuestionCircle, faGlobe, faChevronLeft, faChevronRight, faWallet, faXmark,faInfo } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faQuestionCircle, faGlobe, faChevronLeft, faChevronRight, faWallet, faXmark,faInfo,faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import TwinklingStars from "@/components/TwinklingStars";
 import MatrixLoadingScreen from "@/components/LoadingScreen";
 import 'animate.css';
@@ -17,6 +17,7 @@ import FellaModal from '@/components/collection/FellaModal';
 import { Web3Modal } from "@/components/Web3/Web3Modal";
 import Alert from "@/components/Alert";
 library.add(faWallet,
+  faThumbsUp,
   faTwitter,
   faGithub,
   faDiscord,

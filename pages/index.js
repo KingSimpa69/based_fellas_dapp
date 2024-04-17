@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
   const options = [
     {text:"About Us",image:"/images/planets/2.gif",route:"about"},
+    {text:"FELLA Token",image:"/images/planets/5.gif",route:"fella"},
     {text:"Collection",image:"/images/planets/1.gif",route:"collection"},
     {text:"Homes",image:"/images/planets/3.gif",route:"homes"},
     {text:"Market",image:"/images/planets/4.gif",route:"market"}

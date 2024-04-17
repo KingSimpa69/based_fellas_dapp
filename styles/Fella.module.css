@@ -1,0 +1,129 @@
+.statContainer {
+    margin-top:20px;
+    width:100vw;
+    display:flex;
+    justify-content: space-around;
+}
+
+.statItem {
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height:80px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
+.statValue {
+    font-size: 20px;
+    font-family: numbas;
+    margin-top: 16px;
+}
+
+.statLabel {
+    color:#ffffffa6;
+    font-size: 14px;
+    font-family: inter;
+}
+
+.h1 {
+    font-family: inter;
+    font-size: 45px;
+    font-weight: bold;
+    margin: 30px;
+}
+
+.addyButton {
+    max-width: 96vw;
+    box-shadow: 0 0 50px 1px #00bbd479;
+    cursor:pointer;
+    background-color: #11151e;
+    border: 1px solid #ffffff;
+    font-family: inter;
+    margin-top: 40px;
+    padding:8px 15px;
+    border-radius: 5px;
+}
+
+.addyButton:hover {
+    background: var(--textDefault);
+    color:#000000;
+}
+
+.mobileStats {
+    padding-top:20px;
+    padding-bottom:20px;
+    width:100vw;
+    background-color: #11151e07;
+    backdrop-filter: blur(5px;);
+}
+
+.mobileStat{
+    display:flex;
+}
+
+.mobileStat > div:first-child {
+    padding-left:15px;
+    font-family: inter;
+}
+
+.mobileStat > div:nth-child(2) {
+    font-family: numbas;
+    padding-right:15px;
+    text-align: right;
+    width:100%;
+    font-weight: lighter;
+    border-bottom: #ffffff15 1px solid;
+}
+
+.tokenInfo {
+    margin-bottom: 50px;
+    width:100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.tokenInfoItem {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    margin-top:120px;
+}
+
+.tokenInfoHeader {
+    font-family: inter;
+    font-weight: bolder;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.tokenInfoContainer {
+    max-width:600px;
+    padding:15px;
+    border: 1px solid #ffffff;
+    border:1px solid #ffffff;
+    border-radius: 10px;
+    background-color: #11151eb4;
+    backdrop-filter: blur(15px);
+}
+
+.tokenInfoP {
+    color:#ffffffd0;
+    line-height: 23px;
+    font-family: inter;
+}
+
+@media only screen and (max-width: 1169px) {
+    .tokenInfoItem {
+        width:98vw;
+    }
+    .tokenInfo {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+  }
