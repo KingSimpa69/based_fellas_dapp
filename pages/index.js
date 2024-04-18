@@ -9,14 +9,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
  const Home = ({routeChange,spotlight,setSpotlight}) => {
 
-  const MENU_ITEMS = 4
+  const MENU_ITEMS = 6
 
   const options = [
     {text:"About Us",image:"/images/planets/2.gif",route:"about"},
     {text:"FELLA Token",image:"/images/planets/5.gif",route:"fella"},
     {text:"Collection",image:"/images/planets/1.gif",route:"collection"},
     {text:"Homes",image:"/images/planets/3.gif",route:"homes"},
-    {text:"Market",image:"/images/planets/4.gif",route:"market"}
+    {text:"Market",image:"/images/planets/4.gif",route:"market"},
+    {text:"My Wallet",image:"/images/planets/6.gif",route:"wallet"},
   ]
 
   const [planetCss,setPlanetCss] = useState("")
@@ -59,7 +60,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
   return (
     <div {...swipeHandler} className="wrapper">
       <div className={styles.planetSelection}>
-        <div className={planetCss}><Image onClick={()=> options[spotlight].route !== "market" ? routeChange(options[spotlight].route):null} priority alt={"planet"+spotlight} src={options[spotlight].image} width={200} height={200} /></div>
+        <div className={planetCss}><Image unoptimized onClick={()=> options[spotlight].route === "market" ? null : options[spotlight].route === "wallet" ? null:  routeChange(options[spotlight].route)} priority alt={"planet"+spotlight} src={options[spotlight].image} width={200} height={200} /></div>
         <div className={styles.arrows}>
           <div onClick={()=>changePlanet("Right")} className={styles.arrow}><FontAwesomeIcon icon="fa-solid fa-chevron-left" /></div>
           <div onClick={()=>changePlanet("Left")} className={styles.arrow}><FontAwesomeIcon icon="fa-solid fa-chevron-right" /></div>
