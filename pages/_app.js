@@ -16,6 +16,7 @@ import { useWindowSize } from "@/hooks/useWindowSize";
 import FellaModal from '@/components/collection/FellaModal';
 import { Web3Modal } from "@/components/Web3/Web3Modal";
 import Alert from "@/components/Alert";
+import FellasModal from "@/components/wallet/FellasModal"
 library.add(faWallet,
   faThumbsUp,
   faTwitter,
@@ -56,6 +57,9 @@ export default function App({ Component, pageProps }) {
 
   const [web3Shit, setWeb3Shit] = useState({chain: 0, address: undefined, isConnected: false})
 
+  const [fellasModal,toggleFellasModal] = useState(false)
+  const [fellasModalShit,setFellasModalShit] = useState({})
+
   const routeChange = async (route) => {
     console.log(route)
     setWrapperCss("animate__animated animate__zoomOut")
@@ -81,6 +85,7 @@ export default function App({ Component, pageProps }) {
     <MatrixLoadingScreen isLoading={isLoading}/>
     <Alert web3Shit={web3Shit} alerts={alerts} setAlerts={setAlerts} />
     <TwinklingStars />
+    {fellasModal&&<FellasModal alert={alert} setIsLoading={setIsLoading} setFellasModalShit={setFellasModalShit} fellasModalShit={fellasModalShit}/>}
     <FellaModal activeMeta={activeMeta} id={active} open={modal} setOpen={modalOpen} />
     <Nav routeChange={routeChange}  web3Shit={web3Shit} setWeb3Shit={setWeb3Shit} />
     <div className={`${wrapperCss} ${wrapperCss1}`}>
@@ -98,6 +103,9 @@ export default function App({ Component, pageProps }) {
       setActive={setActive}
       active={active}
       modal={modal}
+      setFellasModalShit={setFellasModalShit} 
+      fellasModalShit={fellasModalShit}
+      toggleFellasModal={toggleFellasModal}
       {...pageProps} 
     />
     </div>
