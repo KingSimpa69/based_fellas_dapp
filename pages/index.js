@@ -1,13 +1,11 @@
-import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Index.module.css";
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import delay from "@/functions/delay";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
- const Home = ({routeChange,spotlight,setSpotlight}) => {
+ const Home = ({routeChange,spotlight,setSpotlight,alert}) => {
 
   const MENU_ITEMS = 6
 
@@ -60,7 +58,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
   return (
     <div {...swipeHandler} className="wrapper">
       <div className={styles.planetSelection}>
-        <div className={planetCss}><Image unoptimized onClick={()=> options[spotlight].route === "market" ? null : options[spotlight].route === "wallet" ? null:  routeChange(options[spotlight].route)} priority alt={"planet"+spotlight} src={options[spotlight].image} width={200} height={200} /></div>
+        <div className={planetCss}><Image unoptimized onClick={()=> options[spotlight].route === "market" ? alert("info","Coming soon") : routeChange(options[spotlight].route)} priority alt={"planet"+spotlight} src={options[spotlight].image} width={200} height={200} /></div>
         <div className={styles.arrows}>
           <div onClick={()=>changePlanet("Right")} className={styles.arrow}><FontAwesomeIcon icon="fa-solid fa-chevron-left" /></div>
           <div onClick={()=>changePlanet("Left")} className={styles.arrow}><FontAwesomeIcon icon="fa-solid fa-chevron-right" /></div>

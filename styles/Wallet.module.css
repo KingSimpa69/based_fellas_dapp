@@ -1,0 +1,327 @@
+.balBarCont {
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+     -khtml-user-select: none; 
+       -moz-user-select: none;
+        -ms-user-select: none; 
+            user-select: none;
+    margin-top: -50px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0a0a0a;
+    border-radius: 8px;
+    height:100%;
+    padding:2.5px 10px;
+    border: 1px solid #222222;
+    z-index: +69;
+}
+
+.balWrapper {
+    display:flex;
+    flex-direction: column;
+}
+
+.balanceItem {
+    overflow: hidden;
+    margin:5px;
+    border-radius: 8px;
+    border: 1px solid #ffffff34;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    min-width:100px;
+}
+
+.balLogo {
+    cursor: pointer;
+    background-color: #ffffff15;
+    padding:2px;
+}
+
+.balValue {
+    opacity: .95;
+    display:flex;
+    align-items: center;
+    padding-right:2.5px;
+    padding-left:5px;
+    font-size: 20px;
+    height:32px;
+    font-family: numbas;
+}
+
+.balValue:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.balLabel {
+    margin-right: 10px;
+    text-align: right;
+    text-transform: uppercase;
+    color: #ffffff69;
+    font-family: inter;
+    font-size: 10px;
+}
+
+.assetContainer {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    backdrop-filter: blur(30px);
+    border: 1px solid #222222;
+    background-color:#030303a4;
+    width:98%;
+    margin: 10px;
+    border-radius: 8px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.asset {
+    position: relative;
+    width: calc(86vw/7);
+    height: calc(86vw/7);
+    margin: 10px;
+    background-color: #ffffff0a;
+    border: 3px solid #2c2c2c;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.asset:hover .assetOverlay {
+    display: flex;
+}
+
+.asset:hover .lazyStakingOverlay {
+    cursor: pointer;
+    display: flex;
+}
+
+.assetOverlay:hover ~ .idOverlay {
+    font-size: 22px;   
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.assetOverlay {
+    cursor: pointer;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: 2;
+    transition: background-color 0.5s ease; 
+}
+
+.lazyStakingOverlay {
+    font-family: numbas;
+    font-size: 14px;
+    font-weight: lighter;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right:5px;
+    padding-left:5px;
+    height: 30px; 
+    background-color: rgba(10, 10, 10, 0.151); 
+    backdrop-filter: blur(15px);
+    z-index: 2;
+    border-bottom-left-radius: 8px;
+}
+
+.lazyStakingOverlay:hover {
+    font-size: 15px;
+}
+
+.idOverlay {
+    font-family: numbas;
+    font-size: 20px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-right:5px;
+    padding-left:5px;
+    height: 35px; 
+    background-color: rgba(10, 10, 10, 0.151); 
+    backdrop-filter: blur(15px);
+    z-index: 2;
+    border-bottom-right-radius: 8px;
+}
+
+.fellasModalWrap {
+    position: fixed;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: #0a0a0af1;
+    backdrop-filter: blur(10px);
+    z-index: +6969;
+}
+
+.fellasModalCont {
+    box-shadow: 0 0 200px 5px #00bbd496;
+    overflow: hidden;
+    width:680px;
+    max-width: 98vw;
+    position: relative;
+    background: #0f0f0f;
+    border:1px solid #3b3b3b;
+    border-radius: 8px;
+    z-index: +1;
+}
+
+.fellasModalTop {
+    width:100%;
+    padding-top:15px;
+    padding-bottom:15px;
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.fellasModalTopFifty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fellasModalTopFifty > img{
+    margin-left: 30px;
+    margin-right: 30px;
+    border:6px solid #ffffff;
+    border-radius: 8px;
+}
+
+.fellasModalButton {
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+     -khtml-user-select: none; 
+       -moz-user-select: none;
+        -ms-user-select: none; 
+            user-select: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: inter;
+    font-size: 18px;
+    height:40px;
+    color: #ffffffd3;
+    border-top:1px solid #414141;
+    background-color: #020202;
+    letter-spacing: 1.5px;
+}
+
+.fellasModalButton:hover {
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #1a1a1a;
+}
+
+.fellasModalId {
+    font-family: numbas;
+}
+
+.traitsCont {
+    margin-right: 30px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:5px;
+    background-color: #070707;
+    border-radius: 8px;
+}
+
+.trait {
+    border-radius: 8px;
+    font-family: inter;
+    text-align: center;
+    padding:6px 10px;
+    background-color: #222222;
+    margin:5px;
+    display:flex;
+    flex-direction: column;
+}
+
+.trait > div:first-child {
+    font-size: 14px;
+    color:#ebebeb
+}
+
+.trait > div:nth-child(2) {
+    font-size: 12px;
+    color:#7a7a7ab6
+}
+
+.traitsHeader {
+    margin-top: 10px;
+    font-family: inter;
+    margin-bottom:2.5px;
+}
+
+.modalLazyStakingBalance {
+    display:flex;
+    justify-content: space-around;
+    height:100%;
+    padding: 0 10px;
+}
+
+@media only screen and (max-width: 705px) {
+    .trait > div:first-child {
+        font-size: 12px;
+        color:#ebebeb
+    }
+    
+    .trait > div:nth-child(2) {
+        font-size: 10px;
+        color:#7a7a7ab6
+    }
+    
+    .trait {
+        margin:2.5px;
+    }
+    .traitsCont {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .fellasModalTopFifty {
+        justify-content: center;
+        width:100%;
+    }
+    .fellasModalTop {
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .balBarCont {
+        margin-top: 0;
+    }
+    .balValue {
+        font-size: 16px;
+    }
+    .asset {
+        width:calc(84vw / 2);
+        height:calc(84vw / 2);
+    }
+  }
