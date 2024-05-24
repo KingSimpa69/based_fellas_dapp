@@ -42,7 +42,7 @@ const Homes = ({router,routeChange,alert,windowSize}) => {
                             <div className={styles.statLabel}>FELLA Allocation</div>
                         </div>
                         <div className={styles.statItem}>
-                            <div className={styles.statValue}>5</div>
+                            <div className={styles.statValue}>8</div>
                             <div className={styles.statLabel}>Partner Projects</div>
                         </div>
                     </div>
