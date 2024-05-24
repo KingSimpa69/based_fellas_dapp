@@ -1,199 +1,162 @@
-@keyframes floatUpDown {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-  }
-
-.wrapper {
-    display:flex;
+.h1 {
+    font-family: inter;
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 80px;
 }
 
 .container {
-    width:50vw;
-    border: 0px solid #ffffff;
-}
-
-.homeimg {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.homeimg img {
-    animation: floatUpDown 3s ease-in-out infinite;
-}
-
-.homeimg p{
-    font-family: inter;
-    margin-bottom: 50px;
-    font-size: 50px;
-    font-weight: lighter;
-    letter-spacing: 8px;
-}
-
-.mintCont {
-    padding-top:100px;
+    padding-left: 6vw;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 60px;
+    width:98%;
 }
 
-.mintCont h1{
-    font-family: inter;
+.item {
+    margin: 0 50px;
+    width: 40vw;
+    height: 250px;
+    border-radius: 10px;
+    background-color: #11151eb4;
+    backdrop-filter: blur(15px);
 }
 
-
-.mintCont p{
-    font-family: inter;
+.offset {
+    margin-top: calc(250px / 2);
 }
 
-.disabled{
-    cursor:not-allowed;
-    background-color: #11151e;
-    margin-top:15px;
+.containerHeader {
     font-family: inter;
+    font-weight: bolder;
+    font-size: 28px;
+    margin: 15px;
+    text-align: center;
+}
+
+.tokenInfoItem {
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width:50%;
-    text-decoration: none;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    width:150px;
-    height:50px;
 }
 
-.button{
+
+.addyButton {
+    max-width: 96vw;
+    box-shadow: 0 0 50px 1px #00bbd479;
     cursor:pointer;
     background-color: #11151e;
-    margin-top:15px;
-    font-family: inter;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    width:50%;
-    text-decoration: none;
-    color: #ffffff;
     border: 1px solid #ffffff;
-    width:150px;
-    height:50px;
+    font-family: inter;
+    padding:8px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
-.button:hover {
+.addyButton:hover {
     background: var(--textDefault);
     color:#000000;
 }
 
-.countdown {
-    font-size: 18px;
-    margin-top: 10px;
+.containerP {
+    text-align: center;
+    padding: 15px;
+    color:#ffffffd0;
+    line-height: 23px;
     font-family: inter;
 }
 
-.mintDesc {
-    font-size: 14px;
-    font-weight: 200;
+.homesStat {
+    border: 1px solid #ffffff;
 }
 
-.mintSupply {
-    text-align: center;
-    padding:5px;
-    background-color: #11151e;
-    margin-top:2px;
-    width:150px;
-}
-
-.walletButton {
-    margin:25px;
-    cursor: pointer;
+.statCont {
+    margin-top: 30px;
     display:flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    width:100px;
-    height: 100px;
-    border-radius: 50%;
+    width:100%;
+    justify-content: space-around;
 }
 
-.walletButton:hover svg {
-    color: #ffffff;
+.movetoFront {
+    align-self: flex-start;
+    justify-self: flex-start;
 }
 
-.walletButton svg{
-    z-index: +1;
-    color:#11151e;
-    width:35px;
-}
-
-.walletButton:hover {
-    border:1px solid #ffffff;
-    background-color: #11151e;
-
-}
-
-.homesInWallet {
-    display:flex;
+.statItem {
+    backdrop-filter: blur(10px);
+    display: flex;
     flex-direction: column;
-    margin: 15px;
-    position: relative;
-    width:180px;
-    height:180px;
-}
-
-.homesInWallet h1{
-    width:50px;
-    text-align: center;
-    background-color: #11151ebe;
-    color: #ffffff;
-    z-index: +1;
-    font-family: inter;
-    border-radius: 5px;
-}
-
-.homesInWalletWrap{
-    margin-top: 10px;
-    display:flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    width: 150px;
+    height:80px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
 }
 
-.loadingMsg {
-    margin-top: 50px;
-    text-align: center;
+.statValue {
+    font-size: 20px;
+    font-family: numbas;
+    margin-top: 16px;
+}
+
+.statLabel {
+    color:#ffffffa6;
+    font-size: 14px;
     font-family: inter;
-    font-weight: lighter;
-    letter-spacing: 3px;
-    font-size: 30px;
 }
 
-@media only screen and (max-width: 1000px) {
-    .mintSupply {
-        margin-left:0;
-    }
-    
+.partnerProjects {
+    margin-top: 50px;
+    font-family: inter;
+    font-size: 14px;
+    text-align: center;
+}
+
+.partnerDenote {
+    margin-top: 20px;
+    font-family: inter;
+    font-size: 10px;
+    text-align: center;
+    color: #ffffff83;
+}
+
+@media (max-width: 1160px) {
     .container {
-        width:100vw;
+        padding-left: 0;
     }
-    .mintCont {
-        padding-top:15px;
+    .statItem {
+        backdrop-filter: blur(10px);
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 90px;
+        height:60px;
+        border: 1px solid #ffffff;
+        border-radius: 10px;
     }
-    .mintCont button{
-        align-self: center;
+    
+    .statValue {
+        font-size: 12px;
+        font-family: numbas;
+        margin-top: 16px;
     }
-    .countdown {
-        text-align: center;
+    
+    .statLabel {
+        color:#ffffffa6;
+        font-size: 10px;
+        font-family: inter;
     }
-    .mintDesc {
-        text-align: center;
+    .container {
+        justify-content: center;
     }
-  }
+    .item {
+        width: 92vw;
+        margin: 50px 0;
+    }
+    .offset {
+        margin: 50px 0;
+    }
+}
+  

@@ -17,6 +17,7 @@ import FellaModal from '@/components/collection/FellaModal';
 import { Web3Modal } from "@/components/Web3/Web3Modal";
 import Alert from "@/components/Alert";
 import FellasModal from "@/components/wallet/FellasModal"
+import LazyPhone from "@/components/LazyPhone";
 library.add(faWallet,
   faThumbsUp,
   faTwitter,
@@ -59,6 +60,9 @@ export default function App({ Component, pageProps }) {
 
   const [fellasModal,toggleFellasModal] = useState(false)
   const [fellasModalShit,setFellasModalShit] = useState({})
+  const [ownedList, setOwnedList] = useState([]);
+  const [phoneOpen, togglePhone] = useState(false)
+  const [lSBalances,setLSBalances] = useState([])
 
   const routeChange = async (route) => {
     console.log(route)
@@ -85,8 +89,9 @@ export default function App({ Component, pageProps }) {
     <MatrixLoadingScreen isLoading={isLoading}/>
     <Alert web3Shit={web3Shit} alerts={alerts} setAlerts={setAlerts} />
     <TwinklingStars />
-    {fellasModal&&<FellasModal alert={alert} setIsLoading={setIsLoading} setFellasModalShit={setFellasModalShit} fellasModalShit={fellasModalShit}/>}
-    <FellaModal activeMeta={activeMeta} id={active} open={modal} setOpen={modalOpen} />
+    {fellasModal&&<FellasModal togglePhone={togglePhone} alert={alert} setIsLoading={setIsLoading} setFellasModalShit={setFellasModalShit} fellasModalShit={fellasModalShit}/>}
+    <LazyPhone ownedList={ownedList} setOwnedList={setOwnedList} setIsLoading={setIsLoading} alert={alert} fellasModalShit={fellasModalShit} setLSBalances={setLSBalances} lSBalances={lSBalances} togglePhone={togglePhone} open={phoneOpen} />
+    <FellaModal lSBalances={lSBalances} setLSBalances={setLSBalances} togglePhone={togglePhone} activeMeta={activeMeta} id={active} open={modal} setOpen={modalOpen} />
     <Nav routeChange={routeChange}  web3Shit={web3Shit} setWeb3Shit={setWeb3Shit} />
     <div className={`${wrapperCss} ${wrapperCss1}`}>
     <Component 
@@ -106,6 +111,9 @@ export default function App({ Component, pageProps }) {
       setFellasModalShit={setFellasModalShit} 
       fellasModalShit={fellasModalShit}
       toggleFellasModal={toggleFellasModal}
+      togglePhone={togglePhone}
+      lSBalances={lSBalances} setLSBalances={setLSBalances}
+      ownedList={ownedList} setOwnedList={setOwnedList}
       {...pageProps} 
     />
     </div>

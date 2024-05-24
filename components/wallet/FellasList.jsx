@@ -11,42 +11,34 @@ import readContract from "@/functions/readContract";
 import writeContract from "@/functions/writeContract";
 import formatETH from "@/functions/formatEth";
 import checkType from "@/functions/checkType";
+import LazyStakingContracts from "@/LazyStakingContracts.json"
 
-const FellasList = ({ web3Shit,alert,setIsLoading, setFellasModalShit }) => {
-    const [ownedList, setOwnedList] = useState([]);
-    const [lSBalances,setLSBalances] = useState([])
+const FellasList = ({ web3Shit, setFellasModalShit,lSBalances,setLSBalances,togglePhone,toggleFellasModal,ownedList,setOwnedList }) => {
+
     const [firstLoad, setFirstLoad] = useState(true);
 
     const provider = useEthersProvider()
-    const signer = useEthersSigner()
-
-    const lazyStakingContract = {
-        addy: "0x04259a4FE9b04768e1323d005042E3B62D8D2611",
-        name: "lazy"
-    }
-
-    const claim = async(id) => {
-        setIsLoading(true)
-        try{
-            const tx = await writeContract(signer,lazyStakingContract,"claim",id,{})
-            const type = checkType(tx)
-            type === "string" ? alert("error",tx) : alert("success","Lazy stake claimed",tx.tx.hash) 
-        } catch (e) {
-            console.log(e)
-        } finally {
-            const idArray = ownedList.map(e=>e.id)
-            getBalances(idArray);
-            setIsLoading(false)
-        }
-    }
 
     const getBalances = async (idArray) => {
-        try{
-            const bals = await readContract(provider,lazyStakingContract,"batchFellaUnpaid",[idArray])
-            setLSBalances(bals)
-        } catch (e) {
-            console.log(e)
+        let balances = []
+    
+        try {
+            const promises = LazyStakingContracts.map(async (e) => {
+                const contract = {
+                    addy: e.contract,
+                    name: "lazy"
+                }
+                const bals = await readContract(provider, contract, "batchFellaUnpaid", [idArray])
+                return bals
+            })
+    
+            balances = await Promise.all(promises)
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setLSBalances(balances)
         }
+    
     }
 
     const pullOwned = async () => {
@@ -67,6 +59,17 @@ const FellasList = ({ web3Shit,alert,setIsLoading, setFellasModalShit }) => {
             console.log(error);
         }
     };
+
+    const openFromMain = async(obj) => {
+        try{
+            setFellasModalShit(obj) 
+            togglePhone(true)
+        } catch (e){
+            console.log(e)
+        } finally {
+            toggleFellasModal(false)
+        }
+    }
 
     useEffect(() => {
         if (ownedList.length > 0) {
@@ -95,7 +98,7 @@ const FellasList = ({ web3Shit,alert,setIsLoading, setFellasModalShit }) => {
             debouncedPullOwned.cancel();
         };
     }, [web3Shit]); 
-
+    
     return (
         firstLoad ? <AssetsLoading /> :
         ownedList.length === 0 ? <NoAssets type={"Fellas"} /> :
@@ -103,9 +106,9 @@ const FellasList = ({ web3Shit,alert,setIsLoading, setFellasModalShit }) => {
             return(
                 <div key={index} className={styles.asset}>
                     <Image alt={"fella"+e.id} fill sizes={"width:100%"} src={`/images/fellas/${e.id}.png`}/>
-                    <div onClick={()=>setFellasModalShit(e)} className={styles.assetOverlay}></div>
+                    <div onClick={()=>setFellasModalShit({...e,index:index})} className={styles.assetOverlay}></div>
                     <div className={styles.idOverlay}>{e.id}</div>
-                    <div onClick={()=>claim(parseInt(e.id))} className={styles.lazyStakingOverlay}><Image alt={"fellacoinlogo"} src={"/images/icons/fella.png"} width={15} height={15} />{lSBalances[index] && formatETH(formatEther(lSBalances[index]))}</div>
+                    <div onClick={()=>openFromMain({...e,index:index})} className={styles.lazyStakingOverlay}><Image alt={"fellacoinlogo"} src={"/images/icons/fella.png"} width={15} height={15} /></div> 
                 </div>
                 
             )
