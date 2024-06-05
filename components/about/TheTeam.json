@@ -78,5 +78,13 @@
         "socials" : {
          "twitter":"https://twitter.com/ceejifi"
         }
+    },
+    {
+        "name":"Rckmtl",
+        "title":"Core Mod",
+        "image":"/images/team/rckmtl.jpg",
+        "socials" : {
+         "twitter":"https://x.com/rckmtl1"
+        }
     }
 ]
