@@ -8,7 +8,7 @@ import writeContract from "@/functions/writeContract"
 import { useEthersProvider, useEthersSigner } from "@/hooks/useEthers";
 import checkType from "@/functions/checkType"
 
-const LazyPhone = ({open,togglePhone,fellasModalShit,lSBalances,alert,setIsLoading,ownedList,setLSBalances}) => {
+const LazyPhone = ({open,togglePhone,fellasModalShit,lSBalances,alert,setIsLoading,ownedList,setLSBalances,toggleFellasModal}) => {
 
     const provider = useEthersProvider()
     const signer = useEthersSigner()
@@ -62,7 +62,7 @@ const LazyPhone = ({open,togglePhone,fellasModalShit,lSBalances,alert,setIsLoadi
                         <div key={index} className={styles.phoneItem}>
                             <div className={styles.projectLogo}><Image src={`${e.image}`} width={30} height={30} /></div>
                             <div className={styles.projectName}>{e.name}</div>
-                            {e.name === "FELLA" ? 
+                            {e.name === "FELLA" ||  e.name === "RIKY" ? 
                             <div onClick={()=>claim(parseInt(fellasModalShit.id))} className={styles.claimButton}>{formatETH(formatEther(lSBalances[index][parseInt(fellasModalShit.index)]))}</div> :
                             <div onClick={()=>alert("info","Coming soon")} className={styles.greyedOutButton}>0</div>
                         }

@@ -50,7 +50,7 @@ const Homes = ({router,routeChange,alert,windowSize}) => {
                 <div className={`${styles.item} ${styles.movetoFront}`} >
                     <div className={styles.containerHeader}>Partner Projects</div>
                     <div className={styles.partnerProjects}>
-                    Based Nouns, *Onchain Dinos, Shredding Sassys, *Mystcl<br/> Base Brigade, onchain hunks, Base Pixel Gods, and Small Bros
+                    Based Nouns, *Onchain Dinos, Shredding Sassys, *Mystcl<br/> Base Brigade, Onchain Hunks, Base Pixel Gods, and Small Bros
                     </div>
                     <div className={styles.partnerDenote}>Projects marked with an asterisk (*) conatin more than one collection</div>
                 </div>

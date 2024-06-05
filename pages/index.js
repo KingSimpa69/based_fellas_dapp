@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
  const Home = ({routeChange,spotlight,setSpotlight,alert}) => {
 
-  const MENU_ITEMS = 6
+  const MENU_ITEMS = 7
 
   const options = [
     {text:"About Us",image:"/images/planets/2.gif",route:"about"},
@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
     {text:"Collection",image:"/images/planets/1.gif",route:"collection"},
     {text:"Homes",image:"/images/planets/3.gif",route:"homes"},
     {text:"Market",image:"/images/planets/4.gif",route:"market"},
+    {text:"King's Chests",image:"/images/planets/7.gif",route:"kingschests"},
     {text:"My Wallet",image:"/images/planets/6.gif",route:"wallet"},
   ]
 
@@ -58,7 +59,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
   return (
     <div {...swipeHandler} className="wrapper">
       <div className={styles.planetSelection}>
-        <div className={planetCss}><Image unoptimized onClick={()=> options[spotlight].route === "market" ? alert("info","Coming soon") : routeChange(options[spotlight].route)} priority alt={"planet"+spotlight} src={options[spotlight].image} width={200} height={200} /></div>
+        <div className={planetCss}><Image unoptimized onClick={()=> options[spotlight].route === "market" ? alert("info","Coming soon") : options[spotlight].route === "kingschests" ? window.open('https://kingschests.io', '_blank') : routeChange(options[spotlight].route)} priority alt={"planet"+spotlight} src={options[spotlight].image} width={200} height={200} /></div>
         <div className={styles.arrows}>
           <div onClick={()=>changePlanet("Right")} className={styles.arrow}><FontAwesomeIcon icon="fa-solid fa-chevron-left" /></div>
           <div onClick={()=>changePlanet("Left")} className={styles.arrow}><FontAwesomeIcon icon="fa-solid fa-chevron-right" /></div>

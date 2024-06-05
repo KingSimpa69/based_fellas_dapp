@@ -1,14 +1,5 @@
 [
     {
-       "name":"CordelleOnBase",
-       "title":"Community Head",
-       "image":"/images/team/cordelle.jpg",
-       "socials" : {
-        "twitter":"https://twitter.com/cordelleonbase"
-       }
-
-    },
-    {
         "name":"Underdog",
         "title":"Community Head",
         "image":"/images/team/underdog.jpg",
@@ -22,6 +13,14 @@
         "image":"/images/team/simpa.jpg",
         "socials" : {
          "twitter":"https://twitter.com/kingsimpa69"
+        }
+    },
+    {
+        "name":"Btdangelo",
+        "title":"Artist",
+        "image":"/images/team/btdangelo.jpg",
+        "socials" : {
+         "twitter":"https://x.com/btdangelo"
         }
     },
     {

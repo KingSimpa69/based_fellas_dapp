@@ -128,13 +128,11 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
-    right: 0;
+    top:15px;
+    right: 4px;
     padding-right:5px;
     padding-left:5px;
     height: 30px; 
-    background-color: rgba(10, 10, 10, 0.151); 
-    backdrop-filter: blur(15px);
     z-index: 2;
     border-bottom-left-radius: 8px;
 }
@@ -183,7 +181,7 @@
     max-width: 98vw;
     position: relative;
     background: #0f0f0f;
-    border:1px solid #3b3b3b;
+    border:1px solid #CAC8FF;
     border-radius: 8px;
     z-index: +1;
 }
@@ -227,15 +225,15 @@
     font-size: 18px;
     height:40px;
     color: #ffffffd3;
-    border-top:1px solid #414141;
+    border-top:1px solid #CAC8FF;
     background-color: #020202;
     letter-spacing: 1.5px;
 }
 
 .fellasModalButton:hover {
-    color: #ffffff;
+    color: #000000;
     cursor: pointer;
-    background-color: #1a1a1a;
+    background-color: #CAC8FF;
 }
 
 .fellasModalId {
@@ -293,7 +291,7 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    background-color: #02020241;
+    background-color: #0a0a0af1;
     backdrop-filter: blur(20px);
     width:100vw;
     height:100vh;
@@ -391,6 +389,18 @@
     background-color:#7a7a7a;
     border-radius: 3px;
     padding: 5px;
+}
+
+.closemsg {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: inter;
+    font-size: 12px;
+    color: #CAC8FF;
+}
+
+.closemsg:hover {
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 705px) {

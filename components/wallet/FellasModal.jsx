@@ -1,11 +1,17 @@
 import styles from "@/styles/Wallet.module.css"
 import Image from "next/image"
+import { useEffect } from "react"
 
-const FellasModal = ({fellasModalShit:data,setFellasModalShit,togglePhone}) => {
+const FellasModal = ({fellasModalShit:data,setFellasModalShit,togglePhone,phoneOpen,toggleFellasModal}) => {
+
+    useEffect(() => {
+        phoneOpen ? toggleFellasModal(false) : null
+    }, [phoneOpen])
+    
 
     return( Object.keys(data).length !== 0 &&
         <div onClick={()=>setFellasModalShit({})} className={styles.fellasModalWrap}>
-            <div style={{fontFamily:"inter",color:"#ffffff"}}>CLICK OUTSIDE TO CLOSE</div>
+            <div className={styles.closemsg}>CLICK OUTSIDE TO CLOSE</div>
             <div onClick={(e)=>e.stopPropagation()} className={styles.fellasModalCont}>
                 <div className={styles.fellasModalTop}>
                     <div className={styles.fellasModalTopFifty}>

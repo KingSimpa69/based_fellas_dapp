@@ -89,8 +89,8 @@ export default function App({ Component, pageProps }) {
     <MatrixLoadingScreen isLoading={isLoading}/>
     <Alert web3Shit={web3Shit} alerts={alerts} setAlerts={setAlerts} />
     <TwinklingStars />
-    {fellasModal&&<FellasModal togglePhone={togglePhone} alert={alert} setIsLoading={setIsLoading} setFellasModalShit={setFellasModalShit} fellasModalShit={fellasModalShit}/>}
-    <LazyPhone ownedList={ownedList} setOwnedList={setOwnedList} setIsLoading={setIsLoading} alert={alert} fellasModalShit={fellasModalShit} setLSBalances={setLSBalances} lSBalances={lSBalances} togglePhone={togglePhone} open={phoneOpen} />
+    {fellasModal&&!phoneOpen&&<FellasModal phoneOpen={phoneOpen} toggleFellasModal={toggleFellasModal} togglePhone={togglePhone} alert={alert} setIsLoading={setIsLoading} setFellasModalShit={setFellasModalShit} fellasModalShit={fellasModalShit}/>}
+    <LazyPhone ownedList={ownedList} setOwnedList={setOwnedList} setIsLoading={setIsLoading} alert={alert} fellasModalShit={fellasModalShit} setLSBalances={setLSBalances} lSBalances={lSBalances} togglePhone={togglePhone} open={phoneOpen} toggleFellasModal={toggleFellasModal}/>
     <FellaModal lSBalances={lSBalances} setLSBalances={setLSBalances} togglePhone={togglePhone} activeMeta={activeMeta} id={active} open={modal} setOpen={modalOpen} />
     <Nav routeChange={routeChange}  web3Shit={web3Shit} setWeb3Shit={setWeb3Shit} />
     <div className={`${wrapperCss} ${wrapperCss1}`}>
