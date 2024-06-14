@@ -108,7 +108,7 @@ const FellasList = ({ web3Shit, setFellasModalShit,lSBalances,setLSBalances,togg
                     <Image alt={"fella"+e.id} fill sizes={"width:100%"} src={`/images/fellas/${e.id}.png`}/>
                     <div onClick={()=>setFellasModalShit({...e,index:index})} className={styles.assetOverlay}></div>
                     <div className={styles.idOverlay}>{e.id}</div>
-                    <div onClick={()=>openFromMain({...e,index:index})} className={styles.lazyStakingOverlay}><Image alt={"fellaPhone"+index} src={"/images/phone.png"} width={26} height={50} /></div> 
+                    <div onClick={()=>openFromMain({...e,index:index})} className={styles.lazyStakingOverlay}/>
                 </div>
                 
             )

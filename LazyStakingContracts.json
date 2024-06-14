@@ -5,6 +5,16 @@
         "image": "/images/lsLogos/fella.png"
     },
     {
+        "name": "AYB",
+        "contract": "0xea582dF080d830A0bF060369aA865616aF39510A",
+        "image": "/images/lsLogos/ayb.png"
+    },
+    {
+        "name": "RIKY",
+        "contract": "0x81881b0EEB91E4c91F36A2ec7795Fe0DFFC93371",
+        "image": "/images/lsLogos/riky.png"
+    },
+    {
         "name": "WRAWR",
         "contract": "0x04259a4FE9b04768e1323d005042E3B62D8D2611",
         "image": "/images/lsLogos/wrawr.jpg"
@@ -13,10 +23,5 @@
         "name": "SHAKA",
         "contract": "0x04259a4FE9b04768e1323d005042E3B62D8D2611",
         "image": "/images/lsLogos/shaka.png"
-    },
-    {
-        "name": "RIKY",
-        "contract": "0x81881b0EEB91E4c91F36A2ec7795Fe0DFFC93371",
-        "image": "/images/lsLogos/riky.png"
     }
 ]

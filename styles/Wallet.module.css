@@ -102,8 +102,6 @@
 
 .assetOverlay:hover ~ .idOverlay {
     font-size: 22px;   
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .assetOverlay {
@@ -128,20 +126,36 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top:15px;
-    right: 4px;
-    padding-right:5px;
-    padding-left:5px;
-    height: 30px; 
-    z-index: 2;
+    top:0;
+    right: 0;
+    z-index: +2;
+    width:44px;
+    height:50px;
     border-bottom-left-radius: 8px;
+    background: url("/images/phone1.gif") no-repeat center center;
+    background-size: cover;
 }
 
 .lazyStakingOverlay:hover {
-    font-size: 15px;
+    font-family: numbas;
+    font-size: 14px;
+    font-weight: lighter;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: +2;
+    width:44px;
+    height:50px;
+    border-bottom-left-radius: 8px;
+    background: url("/images/phone2.gif") no-repeat center center;
+    background-size: cover;
 }
 
 .idOverlay {
+    color:#000000;
     font-family: numbas;
     font-size: 20px;
     display: flex; 
@@ -153,7 +167,6 @@
     padding-right:5px;
     padding-left:5px;
     height: 35px; 
-    background-color: rgba(10, 10, 10, 0.151); 
     backdrop-filter: blur(15px);
     z-index: 2;
     border-bottom-right-radius: 8px;
