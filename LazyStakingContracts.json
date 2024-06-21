@@ -15,13 +15,13 @@
         "image": "/images/lsLogos/riky.png"
     },
     {
+        "name": "SHAKA",
+        "contract": "0x0c13a03AcB256289C0fAf12124dAc662bfb36C58",
+        "image": "/images/lsLogos/shaka.png"
+    },
+    {
         "name": "WRAWR",
         "contract": "0x04259a4FE9b04768e1323d005042E3B62D8D2611",
         "image": "/images/lsLogos/wrawr.jpg"
-    },
-    {
-        "name": "SHAKA",
-        "contract": "0x04259a4FE9b04768e1323d005042E3B62D8D2611",
-        "image": "/images/lsLogos/shaka.png"
     }
 ]

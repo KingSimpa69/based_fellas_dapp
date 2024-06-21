@@ -62,7 +62,7 @@ const LazyPhone = ({open,togglePhone,fellasModalShit,lSBalances,alert,setIsLoadi
                         <div key={index} className={styles.phoneItem}>
                             <div className={styles.projectLogo}><Image src={`${e.image}`} width={30} height={30} /></div>
                             <div className={styles.projectName}>{e.name}</div>
-                            {e.name === "FELLA" ||  e.name === "RIKY" ||  e.name === "AYB" ? 
+                            {e.name === "FELLA" ||  e.name === "RIKY" ||  e.name === "AYB" || e.name === "SHAKA" ? 
                             <div onClick={()=>claim(parseInt(fellasModalShit.id))} className={styles.claimButton}>{formatETH(formatEther(lSBalances[index][parseInt(fellasModalShit.index)]))}</div> :
                             <div onClick={()=>alert("info","Coming soon")} className={styles.greyedOutButton}>0</div>
                         }
