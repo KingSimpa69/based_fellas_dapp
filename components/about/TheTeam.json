@@ -5,7 +5,8 @@
         "image":"/images/team/underdog.jpg",
         "socials" : {
          "twitter":"https://twitter.com/underdogadam"
-        }
+        },
+        "Joined":"8/22/2023"
     },
     {
         "name":"KingSimpa69",
@@ -13,7 +14,8 @@
         "image":"/images/team/simpa.jpg",
         "socials" : {
          "twitter":"https://twitter.com/kingsimpa69"
-        }
+        },
+        "Joined":"8/26/2023"
     },
     {
         "name":"Btdangelo",
@@ -21,7 +23,8 @@
         "image":"/images/team/btdangelo.jpg",
         "socials" : {
          "twitter":"https://x.com/btdangelo"
-        }
+        },
+        "Joined":"10/7/2023"
     },
     {
         "name":"Trippy",
@@ -29,7 +32,8 @@
         "image":"/images/team/trippy.jpg",
         "socials" : {
          "twitter":"https://twitter.com/TrippySeer"
-        }
+        },
+        "Joined":"8/26/2023"
     },
     {
         "name":"Buffoon",
@@ -37,7 +41,8 @@
         "image":"/images/team/buffoon.jpg",
         "socials" : {
          "twitter":"https://twitter.com/buffooning"
-        }
+        },
+        "Joined":"8/22/2023"
     },
     {
         "name":"MadBoii",
@@ -45,7 +50,8 @@
         "image":"/images/team/madboi.jpg",
         "socials" : {
          "twitter":"https://twitter.com/Madboiionbase"
-        }
+        },
+        "Joined":"11/25/2023"
     },
     {
         "name":"ButterflyChick🦋",
@@ -53,7 +59,8 @@
         "image":"/images/team/butterfly.jpg",
         "socials" : {
          "twitter":"https://twitter.com/BCryptocoin"
-        }
+        },
+        "Joined":"1/17/2024"
     },
     {
         "name":"OrcaTodd",
@@ -61,7 +68,8 @@
         "image":"/images/team/todd.jpg",
         "socials" : {
          "twitter":"https://twitter.com/OrcaTodd0x"
-        }
+        },
+        "Joined":"1/25/2024"
     },
     {
         "name":"Bona",
@@ -69,7 +77,8 @@
         "image":"/images/team/bona.jpg",
         "socials" : {
          "twitter":"https://twitter.com/kingsimpa69"
-        }
+        },
+        "Joined":"3/10/2024"
     },
     {
         "name":"Ceej",
@@ -77,7 +86,8 @@
         "image":"/images/team/ceej.jpg",
         "socials" : {
          "twitter":"https://twitter.com/ceejifi"
-        }
+        },
+        "Joined":"11/28/2023"
     },
     {
         "name":"Rckmtl",
@@ -85,6 +95,16 @@
         "image":"/images/team/rckmtl.jpg",
         "socials" : {
          "twitter":"https://x.com/rckmtl1"
-        }
+        },
+        "Joined":"3/10/2024"
+    },
+    {
+        "name":"Marwizzle",
+        "title":"Core Mod",
+        "image":"/images/team/marwizzle.jpg",
+        "socials" : {
+         "twitter":"https://x.com/marwizzle420"
+        },
+        "Joined":"8/28/2023"
     }
 ]

@@ -9,9 +9,15 @@ const TheTeam = () => {
             <h1>Our Team</h1>
             <div className={styles.team}>
                 {
-                    TEAM.map((e,index)=>{return(
-                        <TeamMember key={index+e.name} data={e} />
-                    )})
+                    TEAM.slice().sort((a, b) => {
+                        const dateA = new Date(a.Joined);
+                        const dateB = new Date(b.Joined);
+                    
+                        return dateA - dateB;
+
+                    }).map((e, index) => (
+                        <TeamMember key={index + e.name} data={e} />
+                    ))
                 }
             </div>
         </div>
